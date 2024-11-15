@@ -118,6 +118,8 @@ USE_TZ = True
 
 # PersonalFinanceTracker/settings.py
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
+
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = 'login'
 
