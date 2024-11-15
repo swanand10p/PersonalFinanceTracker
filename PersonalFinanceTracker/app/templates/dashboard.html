@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Dashboard</h1>
+<p>Total Income: {{ total_income }}</p>
+<p>Total Expenses: {{ total_expense }}</p>
+<hr>
+<h3>Incomes</h3>
+<ul>
+    {% for income in incomes %}
+        <li>{{ income.date }} - {{ income.source }}: ${{ income.amount }}
+            <a href="{% url 'delete_income' income.id %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+<hr>
+<h3>Expenses</h3>
+<ul>
+    {% for expense in expenses %}
+        <li>{{ expense.date }} - {{ expense.category }}: ${{ expense.amount }}
+            <a href="{% url 'delete_expense' expense.id %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
